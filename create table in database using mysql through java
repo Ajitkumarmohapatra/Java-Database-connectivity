@@ -1,0 +1,23 @@
+ 
+ import java.sql.*;
+ class create_table {
+    public static void main(String[] args) {
+        try{
+            String url="jdbc:mysql://localhost:3306/seereesoft";
+            String user="root";
+            String password="";
+            Connection con = DriverManager.getConnection(url, user, password);
+            Statement stmt=con.createStatement();
+            String sql = "create table student(roll int,name varchar(40))";
+            stmt.executeUpdate(sql);
+            stmt.close();
+            con.close();
+            System.out.println("successs..");
+            
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+}
